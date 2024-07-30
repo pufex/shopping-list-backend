@@ -24,7 +24,7 @@ const checkAdmin: RequestHandler = (req, res, next) => {
                 return res.sendStatus(401)
 
             if(!user.isAdmin)
-                return
+                return res.sendStatus(409)
 
             const userPayload: ResponseUserType = {
                 id: user._id.toString(), 
